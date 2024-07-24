@@ -12,7 +12,7 @@ CREATE TABLE Cliente (
     ativo bool
 );
 CREATE TABLE Cidade (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_cidade INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100),
     estado CHAR(2)
 );

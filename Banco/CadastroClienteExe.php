@@ -1,3 +1,10 @@
+<?php
+include('includes/conexao.php');
+        $nomec = $_POST['nomec'];
+        $senha = $_POST['senha'];
+        $email = $_POST['email'];
+        $ativo = $_POST['ativo'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

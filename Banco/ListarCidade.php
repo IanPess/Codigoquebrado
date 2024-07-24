@@ -23,14 +23,12 @@
                 <th>Deletar</th>
             </tr>
             <?php
-            while($row = mysqli_fetch_array($result)) {
+            while ($row = mysqli_fetch_array($result)) {
                 echo "<tr>";
-                echo "<td>".$row['nome']."</td>";
-                echo "<td>".$row['estado']."</td>";
-
-                
-                echo "<td><a href='alteraCidade.php?id=".$row['id']."'>Alterar</a></td>";
-                echo "<td><a href='deletarCidade.php?id=".$row['id']."'>Deletar</a></td>";
+                echo "<td>" . htmlspecialchars($row['nome']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['estado']) . "</td>";
+                echo "<td><a href='alteraCidade.php?id=" . htmlspecialchars($row['id_cidade']) . "'>Alterar</a></td>";
+                echo "<td><a href='deletarCidade.php?id_cidade=" . htmlspecialchars($row['id_cidade']) . "'>Deletar</a></td>";
                 echo "</tr>";
             }
             ?>

@@ -1,3 +1,8 @@
+<?php
+include('includes/conexao.php');
+        $nome = $_POST['nome'];
+        $estado = $_POST['estado'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

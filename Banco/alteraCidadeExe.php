@@ -1,10 +1,8 @@
 <?php
     include('includes/conexao.php');
-    $id = $_POST['id'];
-    $nomec = $_POST['nomec'];
-    $sql = "SELECT * FROM Cidade WHERE id=$id";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_array($result);
+    $id_cidade = $_POST['id_cidade'];
+    $nome = $_POST['nome'];
+    $estado = $_POST['estado'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,25 +14,33 @@
     <link rel="stylesheet" href="listar.css">
 </head>
 <body>
-    
-    <h1>Alteração de Cliente</h1>
+    <h1>Alteração de cidade</h1>
     <button class="btn"><a href="./index.php">Voltar</a></button>
     <?php
-    echo "<p>Nome da cidade: $nome</p>";
-    echo "<p>Estado: $estado</p>";
-    $sql = "UPDATE Cidade SET 
-    nome = '$nome',
-    estado = '$estado'
-    WHERE id = $id";
+    include('includes/conexao.php');
 
-    echo $sql;
-    $result = mysqli_query($con, $sql);
-    if($result)
-        echo " Dados atualizados";
-    else
-        echo " Erro ao atualizarar dados\n"
-        .mysqli_error($con);
-    
+    if (isset($_POST['id_cidade']) && isset($_POST['nome']) && isset($_POST['estado'])) {
+        $id_cidade = $_POST['id_cidade'];
+        $nome = $_POST['nome'];
+        $estado = $_POST['estado'];
+
+        echo "<p>Nome: $nome</p>";
+        echo "<p>Estado: $estado</p>";
+
+        $sql = "UPDATE Cidade SET nome = '$nome', estado = '$estado' WHERE id_cidade = $id_cidade";
+
+        echo "<p>$sql</p>";
+
+        $result = mysqli_query($con, $sql);
+
+        if ($result) {
+            echo "Dados atualizados com sucesso.";
+        } else {
+            echo "Erro ao atualizar os dados: " . mysqli_error($con);
+        }
+    } else {
+        echo "Dados incompletos.";
+    }
     ?>
 </body>
 </html>

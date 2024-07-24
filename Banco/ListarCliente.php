@@ -39,8 +39,8 @@
                     echo "<td>"."Inativo"."</td>";
                 }
                 
-                echo "<td><a href='alteraCliente.php?id=".$row['id_cliente']."'>Alterar</a></td>";
-                echo "<td><a href='deletarCliente.php?id=".$row['id_cliente']."'>Deletar</a></td>";
+                echo "<td><a href='alteraCliente.php?id=".$row['id']."'>Alterar</a></td>";
+                echo "<td><a href='deletarCliente.php?id=".$row['id']."'>Deletar</a></td>";
                 echo "</tr>";
             }
             ?>
